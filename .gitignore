@@ -1,0 +1,33 @@
+# ===== 数据库（含真实数据，不应入库）=====
+blog.db
+*.db
+*.sqlite
+*.sqlite3
+
+# ===== 环境配置（含真实密钥，严禁入库）=====
+.env
+
+# ===== Python 缓存 / 构建产物 =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# ===== 虚拟环境（各平台自行创建）=====
+.venv/
+venv/
+env/
+ENV/
+
+# ===== 临时文件 / 系统文件 =====
+/tmp/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# ===== 测试用的临时产物 =====
+*.log
