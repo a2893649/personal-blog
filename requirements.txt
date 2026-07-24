@@ -1,0 +1,10 @@
+Flask>=3.0
+Flask-SQLAlchemy>=3.1
+SQLAlchemy>=2.0
+PyJWT>=2.8
+python-dotenv>=1.0
+flask-cors>=4.0
+gunicorn>=21.2
+# waitress：纯 Python 的跨平台 WSGI 服务器，Windows 本地/演示可用（gunicorn 仅支持 Linux/macOS）
+waitress>=2.1
+psycopg2-binary>=2.9
