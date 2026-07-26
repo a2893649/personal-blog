@@ -1,0 +1,26 @@
+# Render.com free-tier deployment config for the personal blog.
+# Usage:
+#   1. Push this file to the repo root of a2893649/personal-blog.
+#   2. In Render dashboard -> New -> Blueprint -> connect GitHub repo a2893649/personal-blog.
+#   3. Render reads render.yaml and deploys the web service on the free plan.
+#   No credit card needed for the free tier; gives a permanent *.onrender.com URL.
+services:
+  - type: web
+    name: personal-blog
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 4 -b 0.0.0.0:$PORT wsgi:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_SECRET
+        sync: false
+      - key: DATABASE_URL
+        value: sqlite:///blog.db
+      - key: JWT_EXP_DAYS
+        value: "7"
+      - key: CORS_ORIGINS
+        sync: false
